@@ -1,0 +1,58 @@
+/* src/components/AccommodationSection.module.css */
+
+/*
+  Custom styles for AccommodationSection and ContentBlock.
+  Using CSS Modules to scope these styles.
+*/
+
+/* --- ContentBlock Animated Borders --- */
+/*
+  These styles define the initial state of the border lines
+  and how they animate on hover.
+  We are using child divs within ContentBlock for the borders
+  and animating their scale using Framer Motion (handled in JS).
+*/
+
+.contentBlock {
+    /* No direct border here, as they are separate elements */
+    /* This class is primarily for the JS component to apply module styles */
+  }
+  
+  /* Ensure child border elements are absolutely positioned correctly */
+  .borderLine {
+    position: absolute;
+    background-color: white; /* Or your desired border color */
+    z-index: 30; /* Keep it above image and overlay */
+  }
+  
+  .borderTop {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform-origin: left; /* For scaleX animation */
+  }
+  
+  .borderRight {
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 2px;
+    transform-origin: top; /* For scaleY animation */
+  }
+  
+  .borderBottom {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    transform-origin: right; /* For scaleX animation */
+  }
+  
+  .borderLeft {
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 2px;
+    transform-origin: bottom; /* For scaleY animation */
+  }
