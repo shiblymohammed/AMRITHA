@@ -47,7 +47,6 @@ const HeritageHero = () => {
 
   // Check for reduced motion preference and bandwidth
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const connection = (navigator as any).connection
     
     if (connection && (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g')) {
@@ -138,19 +137,6 @@ const HeritageHero = () => {
       scaleX: 1
     }
   } as const
-
-  // Loading skeleton animation
-  const skeletonVariants = {
-    initial: { opacity: 0.4 },
-    animate: { 
-      opacity: [0.4, 0.8, 0.4],
-      transition: {
-        duration: 1.5,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  }
 
   return (
     <section 
